@@ -1,3 +1,4 @@
+import joblib
 import pandas as pd
 
 from sklearn.model_selection import train_test_split
@@ -77,6 +78,10 @@ print("\nTraining data shape:", X_train.shape)
 print("Testing data shape:", X_test.shape)
 # Train the Random Forest model
 model.fit(X_train, y_train)
+# Save the trained Random Forest pipeline
+joblib.dump(model, "random_forest_pipeline.pkl")
+
+print("Model pipeline saved successfully!")
 
 print("\nRandom Forest model trained successfully!")
 # Make predictions on test data

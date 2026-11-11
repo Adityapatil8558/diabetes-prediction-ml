@@ -1,0 +1,210 @@
+{
+    "age": {
+        "type": "numeric",
+        "min": 18.0,
+        "max": 90.0,
+        "median": 50.0,
+        "integer": true
+    },
+    "gender": {
+        "type": "categorical",
+        "options": [
+            "Female",
+            "Male",
+            "Other"
+        ]
+    },
+    "ethnicity": {
+        "type": "categorical",
+        "options": [
+            "Asian",
+            "Black",
+            "Hispanic",
+            "Other",
+            "White"
+        ]
+    },
+    "education_level": {
+        "type": "categorical",
+        "options": [
+            "Graduate",
+            "Highschool",
+            "No formal",
+            "Postgraduate"
+        ]
+    },
+    "income_level": {
+        "type": "categorical",
+        "options": [
+            "High",
+            "Low",
+            "Lower-Middle",
+            "Middle",
+            "Upper-Middle"
+        ]
+    },
+    "employment_status": {
+        "type": "categorical",
+        "options": [
+            "Employed",
+            "Retired",
+            "Student",
+            "Unemployed"
+        ]
+    },
+    "smoking_status": {
+        "type": "categorical",
+        "options": [
+            "Current",
+            "Former",
+            "Never"
+        ]
+    },
+    "alcohol_consumption_per_week": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 10.0,
+        "median": 2.0,
+        "integer": true
+    },
+    "physical_activity_minutes_per_week": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 833.0,
+        "median": 100.0,
+        "integer": true
+    },
+    "diet_score": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 10.0,
+        "median": 6.0,
+        "integer": false
+    },
+    "sleep_hours_per_day": {
+        "type": "numeric",
+        "min": 3.0,
+        "max": 10.0,
+        "median": 7.0,
+        "integer": false
+    },
+    "screen_time_hours_per_day": {
+        "type": "numeric",
+        "min": 0.5,
+        "max": 16.8,
+        "median": 6.0,
+        "integer": false
+    },
+    "family_history_diabetes": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0,
+        "integer": true
+    },
+    "hypertension_history": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0,
+        "integer": true
+    },
+    "cardiovascular_history": {
+        "type": "numeric",
+        "min": 0.0,
+        "max": 1.0,
+        "median": 0.0,
+        "integer": true
+    },
+    "bmi": {
+        "type": "numeric",
+        "min": 15.0,
+        "max": 39.2,
+        "median": 25.6,
+        "integer": false
+    },
+    "waist_to_hip_ratio": {
+        "type": "numeric",
+        "min": 0.67,
+        "max": 1.06,
+        "median": 0.86,
+        "integer": false
+    },
+    "systolic_bp": {
+        "type": "numeric",
+        "min": 90.0,
+        "max": 179.0,
+        "median": 116.0,
+        "integer": true
+    },
+    "diastolic_bp": {
+        "type": "numeric",
+        "min": 50.0,
+        "max": 110.0,
+        "median": 75.0,
+        "integer": true
+    },
+    "heart_rate": {
+        "type": "numeric",
+        "min": 40.0,
+        "max": 105.0,
+        "median": 70.0,
+        "integer": true
+    },
+    "cholesterol_total": {
+        "type": "numeric",
+        "min": 100.0,
+        "max": 318.0,
+        "median": 186.0,
+        "integer": true
+    },
+    "hdl_cholesterol": {
+        "type": "numeric",
+        "min": 20.0,
+        "max": 98.0,
+        "median": 54.0,
+        "integer": true
+    },
+    "ldl_cholesterol": {
+        "type": "numeric",
+        "min": 50.0,
+        "max": 263.0,
+        "median": 102.0,
+        "integer": true
+    },
+    "triglycerides": {
+        "type": "numeric",
+        "min": 30.0,
+        "max": 344.0,
+        "median": 121.0,
+        "integer": true
+    },
+    "glucose_fasting": {
+        "type": "numeric",
+        "min": 60.0,
+        "max": 172.0,
+        "median": 111.0,
+        "integer": true
+    },
+    "glucose_postprandial": {
+        "type": "numeric",
+        "min": 70.0,
+        "max": 287.0,
+        "median": 160.0,
+        "integer": true
+    },
+    "insulin_level": {
+        "type": "numeric",
+        "min": 2.0,
+        "max": 32.22,
+        "median": 8.79,
+        "integer": false
+    },
+    "hba1c": {
+        "type": "numeric",
+        "min": 4.0,
+        "max": 9.8,
+        "median": 6.52,
+        "integer": false
+    }
+}
