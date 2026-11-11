@@ -1,14 +1,17 @@
 # Diabetes Prediction Using Machine Learning
+
 ## Live Demo
 
-**Try the application here:**  
+**Try the deployed Streamlit application:**  
 https://ml-diabetes-project.streamlit.app/
 
 ## 1. Project Overview
 
 This project uses machine learning classification algorithms to analyze clinical and lifestyle features and predict diabetes diagnosis.
 
-The main goal is to build and compare different machine learning models and evaluate their performance using standard classification metrics.
+The project focuses on exploring and preparing a diabetes dataset, developing multiple classification models, comparing their performance, and deploying a Random Forest-based prediction application using Streamlit.
+
+The target variable is `diagnosed_diabetes`, which represents the diagnosis recorded in the dataset.
 
 ## 2. Project Objectives
 
@@ -17,20 +20,25 @@ The main goal is to build and compare different machine learning models and eval
 - Analyze numerical and categorical features.
 - Prepare data for machine learning.
 - Train and evaluate multiple classification models.
-- Compare model performance using evaluation metrics.
+- Compare model performance using standard evaluation metrics.
 - Identify important features influencing model predictions.
+- Develop and deploy an interactive Streamlit application.
 
 ## 3. Dataset Description
 
 The project uses `diabetes_dataset.csv`.
 
-- Total records: 100,000
-- Original columns: 31
-- Input features used: 28
-- Target column: `diagnosed_diabetes`
-- Target type: Binary classification (0 and 1)
+| Property | Description |
+|---|---|
+| Total records | 100,000 |
+| Original columns | 31 |
+| Input features used | 28 |
+| Target column | `diagnosed_diabetes` |
+| Target type | Binary classification (0 and 1) |
 
 The columns `diabetes_stage` and `diabetes_risk_score` were excluded from model inputs to avoid potential target leakage.
+
+The dataset is not included in the GitHub repository. It must be placed in the project root before running the individual data-processing and training scripts.
 
 ## 4. Technologies Used
 
@@ -38,6 +46,8 @@ The columns `diabetes_stage` and `diabetes_risk_score` were excluded from model 
 - Pandas
 - Scikit-learn
 - Matplotlib
+- Streamlit
+- Joblib
 - Git and GitHub
 - Visual Studio Code
 
@@ -55,7 +65,9 @@ The columns `diabetes_stage` and `diabetes_risk_score` were excluded from model 
 10. Gradient Boosting
 11. Model comparison and cross-validation
 12. Hyperparameter tuning
-13. Feature importance analysis
+13. Statistical analysis
+14. Feature importance analysis
+15. Streamlit application development and deployment
 
 ## 6. Data Preprocessing
 
@@ -79,6 +91,8 @@ Four classification algorithms were implemented:
 - Random Forest
 - Gradient Boosting
 
+The models were evaluated using accuracy, precision, recall, F1-score, and ROC-AUC.
+
 ## 8. Model Performance
 
 The following results were obtained on the test dataset:
@@ -96,7 +110,7 @@ Gradient Boosting achieved the highest test accuracy and F1-score among the four
 
 Three-fold cross-validation was performed to evaluate model performance across different data splits.
 
-Mean F1-scores:
+**Mean F1-scores:**
 
 - Logistic Regression: 0.8836
 - Decision Tree: 0.8861
@@ -105,7 +119,7 @@ Mean F1-scores:
 
 RandomizedSearchCV was used to tune Random Forest hyperparameters.
 
-Best parameters:
+**Best parameters:**
 
 - Number of estimators: 150
 - Maximum depth: 20
@@ -126,45 +140,128 @@ The three most important features were:
 
 The project includes visualizations of model performance and feature importance.
 
-## 11. Project Visualizations
+## 11. Streamlit Web Application
 
-The following visualizations were generated:
+An interactive web application was developed using Streamlit and deployed using Streamlit Community Cloud.
 
-- `model_comparison.png` – comparison of the four machine learning models.
-- `feature_importance.png` – top 10 important features identified by Random Forest.
+**Application:** https://ml-diabetes-project.streamlit.app/
 
-## 12. How to Run the Project
+### Application Features
 
-Clone the repository:
+- **Home Dashboard:** Displays an overview of the project and dataset.
+- **Diabetes Prediction:** Accepts clinical and lifestyle inputs and generates a model prediction.
+- **Data Visualization:** Displays selected dataset summaries and visual comparisons.
+- **Model Performance:** Presents model comparison and feature importance visualizations.
+
+The application uses a saved and compressed Random Forest preprocessing and prediction pipeline. Feature input metadata is stored separately in `feature_metadata.json`.
+
+
+## 12. Project Visualizations
+
+### Model Comparison
+
+![Model Comparison](model_comparison.png)
+
+### Feature Importance
+
+![Feature Importance](feature_importance.png)
+
+## 13. Application Screenshots
+
+Screenshots of the deployed application can be added here.
+
+Suggested screenshots:
+
+- Home dashboard
+- Diabetes prediction input page
+- Prediction result
+- Data visualization page
+- Model performance page
+
+Save the screenshots in a folder named `screenshots` in the project root, then add them to this section.
+
+## 14. Project Structure
+
+```text
+diabetes-prediction-ml/
+│
+├── app.py
+├── create_feature_metadata.py
+├── feature_metadata.json
+├── random_forest_pipeline_compressed.pkl
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── 01_data_exploration.py
+├── 02_prepare_data.py
+├── 03_data_visualization.py
+├── 04_data_quality.py
+├── 05_train_test_split.py
+├── 06_preprocessing.py
+├── 07_logistic_regression.py
+├── 08_decision_tree.py
+├── 09_random_forest.py
+├── 10_gradient_boosting.py
+├── 11_model_comparison.py
+├── 12_statistical_analysis.py
+│
+├── model_comparison.png
+└── feature_importance.png
+```
+
+The dataset and original uncompressed model are excluded from Git using `.gitignore`.
+
+## 15. How to Run the Project
+
+### Step 1: Clone the repository
 
 ```bash
 git clone https://github.com/Adityapatil8558/diabetes-prediction-ml.git
 cd diabetes-prediction-ml
 ```
 
-Install the required libraries:
+### Step 2: Create and activate a virtual environment
+
+**Windows:**
 
 ```bash
-pip install pandas scikit-learn matplotlib
+python -m venv .venv
+.venv\Scripts\activate
 ```
 
-Run an individual Python script:
+### Step 3: Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Run the Streamlit application
+
+```bash
+streamlit run app.py
+```
+
+### Running individual Python scripts
+
+To run the data exploration script:
 
 ```bash
 python 01_data_exploration.py
 ```
 
-Make sure `diabetes_dataset.csv` is available in the project root before running the scripts.
+Make sure `diabetes_dataset.csv` is available in the project root before running scripts that require the dataset.
 
-## 13. Statistical Analysis
+## 16. Statistical Analysis
 
 A Mann–Whitney U test was performed to compare HbA1c values between the two diagnosis groups.
 
 **Results:**
+
 - Group 0 mean HbA1c: 5.84
 - Group 1 mean HbA1c: 6.97
 - U Statistic: 162003922.5
-- P-value: < 0.001
+- P-value: less than 0.001
 - Rank-biserial correlation: 0.865
 
 **Interpretation:**
@@ -173,8 +270,12 @@ The test showed a statistically significant difference in HbA1c distributions be
 
 This analysis identifies an association in the dataset and does not establish causation.
 
-## 14. Conclusion
+## 17. Conclusion
 
-Four machine learning classification models were developed and evaluated. Gradient Boosting achieved the strongest overall test-set results among the original models, while Random Forest produced very similar performance.
+Four machine learning classification models were developed and evaluated. Gradient Boosting achieved the strongest overall test-set results among the four original models, while Random Forest produced very similar performance.
 
-This project demonstrates data exploration, preprocessing, model development, evaluation, cross-validation, hyperparameter tuning and feature importance analysis.
+The project demonstrates data exploration, preprocessing, model development, evaluation, cross-validation, hyperparameter tuning, statistical analysis, feature importance analysis, and deployment of a machine learning application.
+
+## 18. Disclaimer
+
+This project is developed for educational and academic purposes. Its predictions are generated by a machine learning model trained on a dataset and should not be considered medical diagnoses or a substitute for professional medical advice.

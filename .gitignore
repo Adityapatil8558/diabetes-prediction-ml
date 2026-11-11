@@ -1,0 +1,11 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Dataset
+diabetes_dataset.csv
+
+# Original uncompressed model
+random_forest_pipeline.pkl
