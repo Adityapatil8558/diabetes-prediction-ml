@@ -49,3 +49,47 @@ group_means.plot(
 plt.xticks(rotation=0)
 plt.tight_layout()
 plt.show()
+# Correlation analysis of numerical features
+
+numeric_df = df.select_dtypes(include="number")
+
+correlation_matrix = numeric_df.corr()
+
+plt.figure(figsize=(14, 10))
+
+plt.imshow(correlation_matrix, cmap="coolwarm", aspect="auto")
+
+plt.colorbar(label="Correlation")
+
+plt.xticks(
+    range(len(correlation_matrix.columns)),
+    correlation_matrix.columns,
+    rotation=90
+)
+
+plt.yticks(
+    range(len(correlation_matrix.columns)),
+    correlation_matrix.columns
+)
+
+plt.title("Correlation Heatmap of Numerical Features")
+plt.tight_layout()
+plt.show()
+# HbA1c distribution by diabetes diagnosis
+
+hba1c_no_diabetes = df[df["diagnosed_diabetes"] == 0]["hba1c"]
+hba1c_diabetes = df[df["diagnosed_diabetes"] == 1]["hba1c"]
+
+plt.figure(figsize=(8, 5))
+
+plt.boxplot(
+    [hba1c_no_diabetes, hba1c_diabetes],
+    tick_labels=["No Diabetes", "Diabetes"]
+)
+
+plt.xlabel("Diagnosis")
+plt.ylabel("HbA1c")
+plt.title("HbA1c Distribution by Diabetes Diagnosis")
+
+plt.tight_layout()
+plt.show()

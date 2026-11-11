@@ -88,3 +88,25 @@ for column in categorical_columns:
     print(df[column].value_counts(dropna=False))
     
 print("\nCategorical analysis completed.")
+# Check missing values
+print("\n--- MISSING VALUE ANALYSIS ---")
+
+print(df.isnull().sum())
+
+print("\nTotal missing values:", df.isnull().sum().sum())
+
+
+# Check duplicate records
+print("\n--- DUPLICATE RECORD ANALYSIS ---")
+
+duplicate_count = df.duplicated().sum()
+
+print("Total duplicate records:", duplicate_count)
+
+
+# Display data types
+print("\n--- DATA TYPE ANALYSIS ---")
+
+print(df.dtypes)
+
+print("\nData quality verification completed.")
