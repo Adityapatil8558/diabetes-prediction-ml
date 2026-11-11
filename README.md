@@ -152,7 +152,24 @@ python 01_data_exploration.py
 
 Make sure `diabetes_dataset.csv` is available in the project root before running the scripts.
 
-## 13. Conclusion
+## 13. Statistical Analysis
+
+A Mann–Whitney U test was performed to compare HbA1c values between the two diagnosis groups.
+
+**Results:**
+- Group 0 mean HbA1c: 5.84
+- Group 1 mean HbA1c: 6.97
+- U Statistic: 162003922.5
+- P-value: < 0.001
+- Rank-biserial correlation: 0.865
+
+**Interpretation:**
+
+The test showed a statistically significant difference in HbA1c distributions between the two diagnosis groups. The rank-biserial correlation indicates a strong difference between the groups.
+
+This analysis identifies an association in the dataset and does not establish causation.
+
+## 14. Conclusion
 
 Four machine learning classification models were developed and evaluated. Gradient Boosting achieved the strongest overall test-set results among the original models, while Random Forest produced very similar performance.
 
