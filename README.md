@@ -1,4 +1,8 @@
 # Diabetes Prediction Using Machine Learning
+## Live Demo
+
+**Try the application here:**  
+https://ml-diabetes-project.streamlit.app/
 
 ## 1. Project Overview
 
